@@ -1,16 +1,19 @@
 # chatappjob
+A new Flutter project for job interviews.
 
-A new Flutter project.
+The API is given from CodeCell. 
 
-## Getting Started
+<a href="https://drive.google.com/file/d/1VCth4l6hWHPAyCP90HUPNqz5hE6kVmDe/view?usp=sharing"> APK-Link</a>
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
+## Information
+- Using rest API for login and registration
+- see chat list
+- each chat list open a chat room for the individual.
+  
+## Tools
+- Dio package for HTTP request handling.
+- Toast package used to show a message
+- here JSON convert from online.
+- MVC Pattern are using
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.

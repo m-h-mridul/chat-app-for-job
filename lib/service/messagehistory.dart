@@ -8,13 +8,14 @@ import '../model/messagelist.dart';
 
 messagehistory({String? authToken, ChatlistModelData? userUid}) async {
   try {
+    userUid!.userId!.toInt();
     var headers = {
       'Accept': 'application/json',
       'Authorization': 'Bearer $authToken',
     };
     var dio = Dio();
     var response = await dio.request(
-      'https://svkraft.shop/api/sms-history?to_user=${userUid!}',
+      'https://svkraft.shop/api/sms-history?to_user=${userUid!.userId!.toInt()}',
       options: Options(
         method: 'GET',
         headers: headers,

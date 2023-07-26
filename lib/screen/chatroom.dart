@@ -50,7 +50,7 @@ class ChatRoom extends StatelessWidget {
                           // Extracting data from snapshot object
                           MessageList temp = snapshot.data as MessageList;
                           if (temp.statusCode == 200) {
-                            return temp.data!.isEmpty
+                            return temp.data!.isNotEmpty
                                 ? ListView.builder(
                                     itemCount: temp.data!.length,
                                     itemBuilder: (context, index) {

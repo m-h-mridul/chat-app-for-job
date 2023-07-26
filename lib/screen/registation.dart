@@ -89,6 +89,11 @@ class Registation extends StatelessWidget {
                         email: email.text.toString(),
                         city: city.text.toString(),
                         phone: phone.text.toString());
+                    name.clear();
+                    password.clear();
+                    email.clear();
+                    city.clear();
+                    phone.clear();
                   }
                 },
                 child: Text('Register'),
