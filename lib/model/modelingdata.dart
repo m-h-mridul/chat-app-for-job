@@ -1,5 +1,5 @@
 
-// ignore_for_file: camel_case_types
+// ignore_for_file: camel_case_types, unnecessary_question_mark, prefer_void_to_null, unnecessary_new, prefer_collection_literals, unnecessary_this
 
 class loginAuth {
   bool? success;

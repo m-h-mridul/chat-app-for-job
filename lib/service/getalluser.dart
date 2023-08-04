@@ -1,13 +1,12 @@
 // ignore_for_file: avoid_print
 
-import 'dart:convert';
-
 import 'package:dio/dio.dart';
-
+import 'package:get/get.dart';
 import '../model/chatlistmodel.dart';
 import '../model/modelingdata.dart';
 
-getAllUser({loginAuth? loginauth}) async {
+Rx<ChatlistModel> chatlist = ChatlistModel().obs;
+Future<ChatlistModel?> getAllUser({loginAuth? loginauth}) async {
   try {
     var headers = {
       'Accept': 'application/json',
@@ -24,6 +23,7 @@ getAllUser({loginAuth? loginauth}) async {
 
     if (response.statusCode == 200) {
       ChatlistModel chatlistModel = ChatlistModel.fromJson(response.data);
+      chatlist.value = chatlistModel;
       return chatlistModel;
     } else {
       ChatlistModel chatlistModel = ChatlistModel.fromJson(response.data);
@@ -32,4 +32,5 @@ getAllUser({loginAuth? loginauth}) async {
   } catch (e) {
     print(e.toString());
   }
+  return null;
 }

@@ -1,4 +1,4 @@
-// ignore_for_file: must_be_immutable, prefer_const_constructors
+// ignore_for_file: must_be_immutable, prefer_const_constructors, use_build_context_synchronously
 
 import 'package:flutter/material.dart';
 
@@ -80,23 +80,28 @@ class Registation extends StatelessWidget {
                   return null;
                 },
               ),
-              ElevatedButton(
-                onPressed: () async {
-                  if (_formKey.currentState!.validate()) {
-                    await registation(
-                        name: name.text.toString(),
-                        password: password.text.toString(),
-                        email: email.text.toString(),
-                        city: city.text.toString(),
-                        phone: phone.text.toString());
-                    name.clear();
-                    password.clear();
-                    email.clear();
-                    city.clear();
-                    phone.clear();
-                  }
-                },
-                child: Text('Register'),
+              Padding(
+                padding: EdgeInsets.only(top: 20.0),
+                child: ElevatedButton(
+                  onPressed: () async {
+                    if (_formKey.currentState!.validate()) {
+                      FocusScope.of(context).unfocus();
+                      await registation(
+                          name: name.text.toString(),
+                          password: password.text.toString(),
+                          email: email.text.toString(),
+                          city: city.text.toString(),
+                          phone: phone.text.toString());
+                      name.clear();
+                      password.clear();
+                      email.clear();
+                      city.clear();
+                      phone.clear();
+                      Navigator.pop(context);
+                    }
+                  },
+                  child: Text('Register'),
+                ),
               ),
             ],
           ),

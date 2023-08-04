@@ -1,10 +1,10 @@
-// ignore_for_file: use_key_in_widget_constructors, prefer_const_constructors, use_build_context_synchronously
+// ignore_for_file: use_key_in_widget_constructors, prefer_const_constructors, use_build_context_synchronously, library_private_types_in_public_api
 
 import 'package:chatappjob/screen/registation.dart';
 import 'package:flutter/material.dart';
 import '../model/modelingdata.dart';
 import '../service/login.dart';
-import 'home.dart';
+import 'chatlist.dart';
 
 class LoginApp extends StatelessWidget {
   @override
@@ -66,10 +66,10 @@ class _LoginPageState extends State<LoginPage> {
                         await login(phone: email, password: password);
 
                     if (loginauth.success!) {
-                      Navigator.push(
+                      Navigator.pushReplacement(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => MyHomePage(
+                          builder: (context) => ChatList(
                             loginauth: loginauth,
                             token: loginauth.data!.token,
                           ),
